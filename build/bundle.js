@@ -61,7 +61,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "b0065b552df9618b1d96"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "278f7c30ac121b883212"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -21669,6 +21669,26 @@ var _react2 = _interopRequireDefault(_react);
 
 __webpack_require__(32);
 
+var _ = __webpack_require__(33);
+
+var _2 = _interopRequireDefault(_);
+
+var _3 = __webpack_require__(34);
+
+var _4 = _interopRequireDefault(_3);
+
+var _5 = __webpack_require__(35);
+
+var _6 = _interopRequireDefault(_5);
+
+var _7 = __webpack_require__(36);
+
+var _8 = _interopRequireDefault(_7);
+
+var _9 = __webpack_require__(37);
+
+var _10 = _interopRequireDefault(_9);
+
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
 }
@@ -21693,18 +21713,6 @@ function _inherits(subClass, superClass) {
 // import logo from './logo.svg';
 
 
-// import img1 from '../img/1.png';
-// import img2 from '../img/2.png';
-// import img3 from '../img/3.png';
-// import img4 from '../img/4.png';
-// import img5 from '../img/5.png';
-// import img6 from '../img/6.jpg';
-// import img7 from '../img/7.jpg';
-// import img8 from '../img/8.jpg';
-// import img9 from '../img/9.jpg';
-// import img10 from '../img/10.jpg';
-// import img11 from '../img/11.jpg';
-// console.log(this);
 var App = function (_Component) {
   _inherits(App, _Component);
 
@@ -21720,14 +21728,14 @@ var App = function (_Component) {
     // }
 
 
-    var img1 = 'https://github.com/juningsan/wedding-react/blob/master/img/1.jpg?raw=true';
-    var img2 = 'https://github.com/juningsan/wedding-react/blob/master/img/2.jpg?raw=true';
-    var img3 = 'https://github.com/juningsan/wedding-react/blob/master/img/3.jpg?raw=true';
-    var img4 = 'https://github.com/juningsan/wedding-react/blob/master/img/4.jpg?raw=true';
-    var img5 = 'https://github.com/juningsan/wedding-react/blob/master/img/5.jpg?raw=true';
+    // let img1='https://github.com/juningsan/wedding-react/blob/master/img/1.jpg?raw=true';
+    // let img2='https://github.com/juningsan/wedding-react/blob/master/img/2.jpg?raw=true';
+    // let img3='https://github.com/juningsan/wedding-react/blob/master/img/3.jpg?raw=true';
+    // let img4='https://github.com/juningsan/wedding-react/blob/master/img/4.jpg?raw=true';
+    // let img5='https://github.com/juningsan/wedding-react/blob/master/img/5.jpg?raw=true';
 
     _this.state = {
-      imgs: [img1, img2, img3, img4, img5]
+      imgs: [_2.default, _4.default, _6.default, _8.default, _10.default]
     };
     _this.changeImg = _this.changeImg.bind(_this);
     _this.Pause = _this.Pause.bind(_this);
@@ -21820,6 +21828,36 @@ if(true) {
 	// When the module is disposed, remove the <style> tags
 	module.hot.dispose(function() { update(); });
 }
+
+/***/ }),
+/* 33 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "2af6bf16225ddf5babee4ed3e32818d4.png";
+
+/***/ }),
+/* 34 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "c441168e87c41114e11e74cadaaf4d44.png";
+
+/***/ }),
+/* 35 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "1a4905e38bc114049e1d37bc8240fa47.png";
+
+/***/ }),
+/* 36 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "20dd9ef98cbc7fe9057a154c6c05c9a8.png";
+
+/***/ }),
+/* 37 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "c02df7af1bf3ceb4a7d64e17d5c096b6.png";
 
 /***/ })
 /******/ ]);
