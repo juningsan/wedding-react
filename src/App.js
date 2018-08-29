@@ -22,6 +22,13 @@ class App extends Component {
     //     imgs[i]=window["img"+(i+1)];
         
     // }
+    if(!img1){
+      img1='https://github.com/juningsan/wedding-react/blob/master/img/1.jpg?raw=true';
+      img2='https://github.com/juningsan/wedding-react/blob/master/img/2.jpg?raw=true';
+      img3='https://github.com/juningsan/wedding-react/blob/master/img/3.jpg?raw=true';
+      img4='https://github.com/juningsan/wedding-react/blob/master/img/4.jpg?raw=true';
+      img5='https://github.com/juningsan/wedding-react/blob/master/img/5.jpg?raw=true';
+    }
     this.state={
       imgs:[img1,img2,img3,img4,img5],
     };
