@@ -61,7 +61,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "bfa648809c7e98d0d8e7"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "b0065b552df9618b1d96"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -1162,7 +1162,7 @@ exports = module.exports = __webpack_require__(14)(undefined);
 
 
 // module
-exports.push([module.i, "body {\n  margin: 0;\n  padding: 0;\n  font-family: sans-serif;\n}\n", ""]);
+exports.push([module.i, "html {\n  height:100%;\n}\n\nbody {\n  height:100%;\n  margin: 0;\n  padding: 0;\n  font-family: sans-serif;\n}\n\n#root {\n  height:100%;\n}\n", ""]);
 
 // exports
 
@@ -1176,7 +1176,7 @@ exports = module.exports = __webpack_require__(14)(undefined);
 
 
 // module
-exports.push([module.i, ".App {\n  text-align: center;\n}\n\n.App-logo {\n  animation: App-logo-spin infinite 20s linear;\n  height: 80px;\n}\n\n.App-header {\n  background-color: rgb(247, 78, 129);\n  height: 90px;\n  padding: 20px;\n  color: white;\n}\n\n.App-title {\n  font-size: 1.5em;\n}\n\n.App-intro {\n  font-size: large;\n}\n\n@keyframes App-logo-spin {\n  from { transform: rotate(0deg); }\n  to { transform: rotate(360deg); }\n}\n", ""]);
+exports.push([module.i, ".App {\n  height:100%;\n  text-align: center;\n}\n\n.App-logo {\n  animation: App-logo-spin infinite 20s linear;\n  height: 80px;\n}\n\n.App-header {\n  background-color: rgb(247, 78, 129);\n  height: 10%;\n  color: white;\n}\n\n.App-title {\n  display: inline-block;\n  font-size:150%;\n}\n\n.App-intro {\n  font-size: large;\n}\n\n.content {\n  height:90%;\n}\n.slide {\n  box-sizing: border-box;\n  height:30%;\n  padding:1%;\n  background-color:rgb(204, 207, 33)\n}\n.slide-bar {\n  width:60%;\n  height:100%;\n  margin:0 auto;\n\n}\n.slide-img-main {\n  position: relative;\n  float:left;\n  width:30%;\n  height:100%;\n  z-index: 10;\n}\n\n.slide-img-left {\n  position: relative;\n  float:left;\n  width:30%;\n  height:90%;\n  margin-top:1%;\n  margin-left:7%;\n  margin-right:-3%;\n  z-index: 1;\n}\n\n.slide-img-right {\n  position: relative;\n  float:right;\n  width:30%;\n  height:90%;\n  margin-top:1%;\n  margin-right:7%;\n  margin-left:-3%;\n  z-index: 1;\n}\n\n.slide img {\n  display:block;\n  width:100%;\n  height:100%;\n  /* border-radius: 3%; */\n}\n\n.article {\n  width:100%;\n  height:70%;\n  background-color: aquamarine;\n}\n\n.article-left, .article-right{\n  width:20%;\n  height:100%;\n  background-color: aqua;\n}\n\n.article-left {\n  float:left;\n}\n\n.article-right {\n  float:right;\n}\n\n\n@keyframes App-logo-spin {\n  from { transform: rotate(0deg); }\n  to { transform: rotate(360deg); }\n}\n", ""]);
 
 // exports
 
@@ -21693,19 +21693,95 @@ function _inherits(subClass, superClass) {
 // import logo from './logo.svg';
 
 
+// import img1 from '../img/1.png';
+// import img2 from '../img/2.png';
+// import img3 from '../img/3.png';
+// import img4 from '../img/4.png';
+// import img5 from '../img/5.png';
+// import img6 from '../img/6.jpg';
+// import img7 from '../img/7.jpg';
+// import img8 from '../img/8.jpg';
+// import img9 from '../img/9.jpg';
+// import img10 from '../img/10.jpg';
+// import img11 from '../img/11.jpg';
+// console.log(this);
 var App = function (_Component) {
   _inherits(App, _Component);
 
-  function App() {
+  function App(props) {
     _classCallCheck(this, App);
 
-    return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
+    var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
+
+    var imgs = [];
+    // for(let i=0;i<11;i++){
+    //     imgs[i]=window["img"+(i+1)];
+
+    // }
+
+
+    var img1 = 'https://github.com/juningsan/wedding-react/blob/master/img/1.jpg?raw=true';
+    var img2 = 'https://github.com/juningsan/wedding-react/blob/master/img/2.jpg?raw=true';
+    var img3 = 'https://github.com/juningsan/wedding-react/blob/master/img/3.jpg?raw=true';
+    var img4 = 'https://github.com/juningsan/wedding-react/blob/master/img/4.jpg?raw=true';
+    var img5 = 'https://github.com/juningsan/wedding-react/blob/master/img/5.jpg?raw=true';
+
+    _this.state = {
+      imgs: [img1, img2, img3, img4, img5]
+    };
+    _this.changeImg = _this.changeImg.bind(_this);
+    _this.Pause = _this.Pause.bind(_this);
+    return _this;
   }
 
   _createClass(App, [{
+    key: 'changeSequence',
+    value: function changeSequence(arr) {
+      var arr1 = [];
+      var temp = arr[0];
+      for (var i = 0; i < arr.length - 1; i++) {
+        arr1[i] = arr[i + 1];
+      }
+      arr1[arr.length - 1] = temp;
+      return arr1;
+    }
+  }, {
+    key: 'changeImg',
+    value: function changeImg() {
+      var imgs1 = [].concat(this.state.imgs);
+      imgs1 = this.changeSequence(imgs1);
+      console.log('ok', imgs1);
+      this.setState({
+        imgs: imgs1
+      });
+    }
+  }, {
+    key: 'Pause',
+    value: function Pause() {
+      console.log('paused');
+      clearInterval(this.t);
+    }
+  }, {
+    key: 'Continue',
+    value: function Continue() {
+      console.log('continued');
+      this.t = setInterval(this.changeImg, 3000);
+    }
+  }, {
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      this.t = setInterval(this.changeImg, 3000);
+    }
+  }, {
     key: 'render',
     value: function render() {
-      return _react2.default.createElement('div', { className: 'App' }, _react2.default.createElement('header', { className: 'App-header' }, _react2.default.createElement('h1', { className: 'App-title' }, "\u71D5\u5C14\u4E4B\u7EA6")), _react2.default.createElement('div', { className: 'content' }, _react2.default.createElement('div', { className: 'slide' }, _react2.default.createElement('div', { className: 'slide-img' }, _react2.default.createElement('img', { src: '../../img/1.jpg' })))));
+      var _this2 = this;
+
+      return _react2.default.createElement('div', { className: 'App' }, _react2.default.createElement('header', { className: 'App-header' }, _react2.default.createElement('h1', { className: 'App-title' }, "\u71D5\u5C14\u4E4B\u7EA6")), _react2.default.createElement('div', { className: 'content' }, _react2.default.createElement('div', { className: 'slide' }, _react2.default.createElement('div', { className: 'slide-bar' }, _react2.default.createElement('div', { className: 'slide-img-left' }, _react2.default.createElement('img', { src: this.state.imgs[0] })), _react2.default.createElement('div', { className: 'slide-img-main' }, _react2.default.createElement('img', { onMouseEnter: function onMouseEnter() {
+          return _this2.Pause();
+        }, onMouseLeave: function onMouseLeave() {
+          return _this2.Continue();
+        }, src: this.state.imgs[1] })), _react2.default.createElement('div', { className: 'slide-img-right' }, _react2.default.createElement('img', { src: this.state.imgs[2] })))), _react2.default.createElement('div', { className: 'article' }, _react2.default.createElement('div', { className: 'article-left' }), _react2.default.createElement('div', { className: 'article-center' }), _react2.default.createElement('div', { className: 'article-right' }))));
     }
   }]);
 
