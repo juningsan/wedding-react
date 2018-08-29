@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 // import logo from './logo.svg';
 import './App.css';
-import img1 from '../img/1.png';
-import img2 from '../img/2.png';
-import img3 from '../img/3.png';
-import img4 from '../img/4.png';
-import img5 from '../img/5.png';
+
+// import img1 from '../img/1.png';
+// import img2 from '../img/2.png';
+// import img3 from '../img/3.png';
+// import img4 from '../img/4.png';
+// import img5 from '../img/5.png';
 // import img6 from '../img/6.jpg';
 // import img7 from '../img/7.jpg';
 // import img8 from '../img/8.jpg';
@@ -14,7 +15,6 @@ import img5 from '../img/5.png';
 // import img11 from '../img/11.jpg';
 // console.log(this);
 class App extends Component {
-
   constructor(props){
     super(props);
     let imgs=[];
@@ -22,13 +22,15 @@ class App extends Component {
     //     imgs[i]=window["img"+(i+1)];
         
     // }
-    if(!img1){
-      img1='https://github.com/juningsan/wedding-react/blob/master/img/1.jpg?raw=true';
-      img2='https://github.com/juningsan/wedding-react/blob/master/img/2.jpg?raw=true';
-      img3='https://github.com/juningsan/wedding-react/blob/master/img/3.jpg?raw=true';
-      img4='https://github.com/juningsan/wedding-react/blob/master/img/4.jpg?raw=true';
-      img5='https://github.com/juningsan/wedding-react/blob/master/img/5.jpg?raw=true';
-    }
+    
+
+  
+    let img1='https://github.com/juningsan/wedding-react/blob/master/img/1.jpg?raw=true';
+    let img2='https://github.com/juningsan/wedding-react/blob/master/img/2.jpg?raw=true';
+    let img3='https://github.com/juningsan/wedding-react/blob/master/img/3.jpg?raw=true';
+    let img4='https://github.com/juningsan/wedding-react/blob/master/img/4.jpg?raw=true';
+    let img5='https://github.com/juningsan/wedding-react/blob/master/img/5.jpg?raw=true';
+    
     this.state={
       imgs:[img1,img2,img3,img4,img5],
     };
