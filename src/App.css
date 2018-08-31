@@ -81,6 +81,20 @@
   background-color: aquamarine;
 }
 
+.article-center{
+  width:60%;
+  height:100%;
+  float:left;
+}
+
+.article-center .poem{
+  width:70%;
+  margin:0 auto;
+}
+
+.article hr{
+  width:70%;
+}
 .article-left, .article-right{
   width:20%;
   height:100%;

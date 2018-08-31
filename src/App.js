@@ -12,19 +12,6 @@ class App extends Component {
   constructor(props){
     super(props);
     let imgs=[];
-    // for(let i=0;i<11;i++){
-    //     imgs[i]=window["img"+(i+1)];
-        
-    // }
-    
-
-  
-    // let img1='https://github.com/juningsan/wedding-react/blob/master/img/1.jpg?raw=true';
-    // let img2='https://github.com/juningsan/wedding-react/blob/master/img/2.jpg?raw=true';
-    // let img3='https://github.com/juningsan/wedding-react/blob/master/img/3.jpg?raw=true';
-    // let img4='https://github.com/juningsan/wedding-react/blob/master/img/4.jpg?raw=true';
-    // let img5='https://github.com/juningsan/wedding-react/blob/master/img/5.jpg?raw=true';
-    
     this.state={
       imgs:[img1,img2,img3,img4,img5],
     };
@@ -89,6 +76,18 @@ class App extends Component {
             <div className="article-left">
             </div>
             <div className="article-center">
+              <div className="poem">
+                <h2>浣溪沙</h2>
+                <p>雲影斜開旭日紅，小閣花面漸交融。沈香宛轉心字重。<br/>
+                此夕風露巧相遇，他年鸞鳳共摶空。人間何處不從容。</p>
+              </div>
+              <hr/>
+              <div className="poem">
+                <h2>贺新郎</h2>
+                <p>梦觉风雷定。看半轮、徐徐稳上，慢盈萧岭。欲搴帘栊流光湿，远近橘灯掩映。渐华彩、飘摇入影。蜜烛偷滴化喜泪，看双鸳、皓翎初相并。前尘誓，般般应。<br/>
+                千秋此际俱一静。怜眉山、似笑还颦，绿波红杏。执手西湖数层碧，误了梅邀鹤请。正晚照、楼船小艇。北望乡园何时到，愿乘槎、换朝夕醉醒。归期至，闻鸡鸣。</p>
+              </div>
+              <hr/>
             </div>
             <div className="article-right">
             </div>
