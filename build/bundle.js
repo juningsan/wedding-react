@@ -61,7 +61,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "df250b013c730ca312ef"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "19d467806e7c465019f3"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -1176,7 +1176,7 @@ exports = module.exports = __webpack_require__(14)(undefined);
 
 
 // module
-exports.push([module.i, ".App {\n  height:100%;\n  text-align: center;\n}\n\n.App-logo {\n  animation: App-logo-spin infinite 20s linear;\n  height: 80px;\n}\n\n.App-header {\n  background-color: rgb(247, 78, 129);\n  height: 10%;\n  color: white;\n}\n\n.App-title {\n  display: inline-block;\n  font-size:150%;\n}\n\n.App-intro {\n  font-size: large;\n}\n\n.content {\n  height:90%;\n}\n.slide {\n  box-sizing: border-box;\n  height:30%;\n  padding:1%;\n  background-color:rgb(204, 207, 33)\n}\n.slide-bar {\n  width:60%;\n  height:100%;\n  margin:0 auto;\n\n}\n.slide-img-main {\n  position: relative;\n  float:left;\n  width:30%;\n  height:100%;\n  z-index: 10;\n}\n\n.slide-img-left {\n  position: relative;\n  float:left;\n  width:30%;\n  height:90%;\n  margin-top:1%;\n  margin-left:7%;\n  margin-right:-3%;\n  z-index: 1;\n}\n\n.slide-img-right {\n  position: relative;\n  float:right;\n  width:30%;\n  height:90%;\n  margin-top:1%;\n  margin-right:7%;\n  margin-left:-3%;\n  z-index: 1;\n}\n\n.slide img {\n  display:block;\n  width:100%;\n  height:100%;\n  /* border-radius: 3%; */\n}\n\n.article {\n  width:100%;\n  height:70%;\n  background-color: aquamarine;\n}\n\n.article-center{\n  width:60%;\n  height:100%;\n  float:left;\n}\n\n.article-center .poem{\n  width:70%;\n  margin:0 auto;\n}\n\n.article hr{\n  width:70%;\n}\n.article-left, .article-right{\n  width:20%;\n  height:100%;\n  background-color: aqua;\n}\n\n.article-left {\n  float:left;\n}\n\n.article-right {\n  float:right;\n}\n\n\n@keyframes App-logo-spin {\n  from { transform: rotate(0deg); }\n  to { transform: rotate(360deg); }\n}\n", ""]);
+exports.push([module.i, ".App {\n  height:100%;\n  text-align: center;\n}\n\n.App-logo {\n  animation: App-logo-spin infinite 20s linear;\n  height: 80px;\n}\n\n.App-header {\n  background-color: rgb(247, 78, 129);\n  height: 10%;\n  color: white;\n}\n\n.App-title {\n  display: inline-block;\n  font-size:150%;\n}\n\n.App-intro {\n  font-size: large;\n}\n\n.content {\n  height:90%;\n}\n.slide {\n  box-sizing: border-box;\n  height:30%;\n  padding:1%;\n  background-color:rgb(204, 207, 33)\n}\n.slide-bar {\n  width:60%;\n  height:100%;\n  margin:0 auto;\n\n}\n.slide-img-main {\n  position: relative;\n  float:left;\n  width:30%;\n  height:100%;\n  z-index: 10;\n  overflow:hidden;\n}\n\n.movemain {\n  position: relative;\n  float:left;\n  width:30%;\n  height:100%;\n  z-index: 10;\n  animation:movemain 1s;\n}\n\n.movemain1 {\n  position: relative;\n  float:left;\n  top:-100%;\n  left:30%;\n  width:30%;\n  height:100%;\n  z-index: 10;\n  animation:movemain1 1s;\n}\n\n.awaymain {\n  position: relative;\n  float:left;\n  width:30%;\n  height:100%;\n  z-index: 10;\n  left:-1000px;\n}\n\n.awaymain1 {\n  position: relative;\n  float:left;\n  top:-100%;\n  width:30%;\n  height:100%;\n  z-index: 10;\n}\n.slide-img-left {\n  position: relative;\n  float:left;\n  width:30%;\n  height:90%;\n  margin-top:1%;\n  margin-left:7%;\n  margin-right:-3%;\n  z-index: 1;\n  overflow:hidden;\n}\n\n.moveleft {\n  position: relative;\n  float:left;\n  width:30%;\n  height:90%;\n  margin-top:1%;\n  /* margin-left:7%; */\n  margin-right:-3%;\n  z-index: 1;\n  animation:moveleft 1s;\n}\n\n.moveleft1 {\n  position: relative;\n  float:left;\n  width:30%;\n  height:90%;\n  top:-100%;\n  left:30%;\n  margin-top:1%;\n  /* margin-left:7%; */\n  margin-right:-3%;\n  z-index: 1;\n  animation:moveleft1 1s;\n}\n\n.awayleft {\n  position: relative;\n  float:left;\n  width:30%;\n  height:90%;\n  margin-top:1%;\n  /* margin-left:7%; */\n  margin-right:-3%;\n  z-index: 1;\n  left:-1000px;\n}\n\n.awayleft1 {\n  position: relative;\n  float:left;\n  width:30%;\n  height:90%;\n  top:-100%;\n  margin-top:1%;\n  /* margin-left:7%; */\n  margin-right:-3%;\n  z-index: 1;\n}\n.slide-img-right {\n  position: relative;\n  float:right;\n  width:30%;\n  height:90%;\n  margin-top:1%;\n  margin-right:7%;\n  margin-left:-3%;\n  z-index: 1;\n  overflow:hidden;\n}\n\n.moveright {\n  position: relative;\n  float:right;\n  width:30%;\n  height:90%;\n  margin-top:1%;\n  margin-right:7%;\n  margin-left:-3%;\n  z-index: 1;\n  animation:moveright 1s;\n}\n\n.moveright1 {\n  position: relative;\n  float:right;\n  width:30%;\n  height:90%;\n  top:-100%;\n  margin-top:1%;\n  margin-right:7%;\n  margin-left:-3%;\n  z-index: 1;\n  animation:moveright1 1s;\n}\n\n.awayright {\n  position: relative;\n  float:right;\n  width:30%;\n  height:90%;\n  margin-top:1%;\n  margin-right:7%;\n  margin-left:-3%;\n  z-index: 1;\n  left:-1000px;\n}\n\n.awayright1 {\n  position: relative;\n  float:right;\n  width:30%;\n  height:90%;\n  top:-100%;\n  margin-top:1%;\n  margin-right:7%;\n  margin-left:-3%;\n  z-index: 1;\n}\n\n.slide img {\n  float:left;\n  display:block;\n  width:100%;\n  height:100%;\n  \n  /* border-radius: 3%; */\n}\n\n.slide .img1 {\n  position:relative;\n  float:left;\n  display:block;\n  top:-100%;\n  left:100%;\n  width:100%;\n  height:100%;\n  \n  /* border-radius: 3%; */\n}\n\n.article {\n  width:100%;\n  height:70%;\n  background-color: aquamarine;\n}\n\n.article-center{\n  width:60%;\n  height:100%;\n  float:left;\n}\n\n.article-center .poem{\n  width:70%;\n  margin:0 auto;\n}\n\n.article hr{\n  width:70%;\n}\n.article-left, .article-right{\n  width:20%;\n  height:100%;\n  background-color: aqua;\n}\n\n.article-left {\n  float:left;\n}\n\n.article-right {\n  float:right;\n}\n\n@keyframes movemain {\n  0% {left:0px;}\n  100% {left:-100%;}\n}\n\n@keyframes moveright {\n  0% {left:0px;}\n  100% {left:-100%;}\n}\n\n@keyframes moveleft {\n  0% {left:0px;}\n  100% {left:-100%;}\n}\n\n@keyframes movemain1 {\n  0% {left:100%;height:90%;}\n  100% {left:0px;height:100%}\n}\n\n@keyframes moveright1 {\n  0% {left:100%;}\n  100% {left:0px;}\n}\n\n@keyframes moveleft1 {\n  0% {left:100%;}\n  100% {left:0px;}\n}", ""]);
 
 // exports
 
@@ -21744,12 +21744,29 @@ var App = function (_Component) {
   }, {
     key: 'changeImg',
     value: function changeImg() {
+      var _this2 = this;
+
+      this.refs.movemain.className = "movemain";
+      this.refs.moveright.className = "moveright";
+      this.refs.moveleft.className = "moveleft";
+      this.refs.movemain1.className = "movemain1";
+      this.refs.moveright1.className = "moveright1";
+      this.refs.moveleft1.className = "moveleft1";
+      setTimeout(function () {
+        _this2.refs.movemain.className = "awaymain";
+        _this2.refs.moveright.className = "awayright";
+        _this2.refs.moveleft.className = "awayleft";
+        _this2.refs.movemain1.className = "awaymain1";
+        _this2.refs.moveright1.className = "awayright1";
+        _this2.refs.moveleft1.className = "awayleft1";
+      }, 1000);
+
       var imgs1 = [].concat(this.state.imgs);
       imgs1 = this.changeSequence(imgs1);
       console.log('ok', imgs1);
       this.setState({
         imgs: imgs1
-      });
+      }, function () {});
     }
   }, {
     key: 'Pause',
@@ -21766,18 +21783,41 @@ var App = function (_Component) {
   }, {
     key: 'componentDidMount',
     value: function componentDidMount() {
-      this.t = setInterval(this.changeImg, 3000);
+      var _this3 = this;
+
+      setTimeout(function () {
+        _this3.refs.movemain.className = "movemain";
+        _this3.refs.moveright.className = "moveright";
+        _this3.refs.moveleft.className = "moveleft";
+        _this3.refs.movemain1.className = "movemain1";
+        _this3.refs.moveright1.className = "moveright1";
+        _this3.refs.moveleft1.className = "moveleft1";
+        setTimeout(function () {
+          _this3.refs.movemain.className = "awaymain";
+          _this3.refs.moveright.className = "awayright";
+          _this3.refs.moveleft.className = "awayleft";
+          _this3.refs.movemain1.className = "awaymain1";
+          _this3.refs.moveright1.className = "awayright1";
+          _this3.refs.moveleft1.className = "awayleft1";
+        }, 1000);
+
+        _this3.t = setInterval(_this3.changeImg, 3000);
+      }, 3000);
     }
   }, {
     key: 'render',
     value: function render() {
-      var _this2 = this;
+      var _this4 = this;
 
-      return _react2.default.createElement('div', { className: 'App' }, _react2.default.createElement('header', { className: 'App-header' }, _react2.default.createElement('h1', { className: 'App-title' }, "\u71D5\u5C14\u4E4B\u7EA6")), _react2.default.createElement('div', { className: 'content' }, _react2.default.createElement('div', { className: 'slide' }, _react2.default.createElement('div', { className: 'slide-bar' }, _react2.default.createElement('div', { className: 'slide-img-left' }, _react2.default.createElement('img', { src: this.state.imgs[0] })), _react2.default.createElement('div', { className: 'slide-img-main' }, _react2.default.createElement('img', { onMouseEnter: function onMouseEnter() {
-          return _this2.Pause();
+      return _react2.default.createElement('div', { className: 'App' }, _react2.default.createElement('header', { className: 'App-header' }, _react2.default.createElement('h1', { className: 'App-title' }, "\u71D5\u5C14\u4E4B\u7EA6")), _react2.default.createElement('div', { className: 'content' }, _react2.default.createElement('div', { className: 'slide' }, _react2.default.createElement('div', { className: 'slide-bar' }, _react2.default.createElement('div', { className: 'slide-img-left' }, _react2.default.createElement('img', { ref: 'moveleft', src: this.state.imgs[0] }), _react2.default.createElement('img', { ref: 'moveleft1', src: this.state.imgs[1] })), _react2.default.createElement('div', { className: 'slide-img-main' }, _react2.default.createElement('img', { ref: 'movemain', onMouseEnter: function onMouseEnter() {
+          return _this4.Pause();
         }, onMouseLeave: function onMouseLeave() {
-          return _this2.Continue();
-        }, src: this.state.imgs[1] })), _react2.default.createElement('div', { className: 'slide-img-right' }, _react2.default.createElement('img', { src: this.state.imgs[2] })))), _react2.default.createElement('div', { className: 'article' }, _react2.default.createElement('div', { className: 'article-left' }), _react2.default.createElement('div', { className: 'article-center' }, _react2.default.createElement('div', { className: 'poem' }, _react2.default.createElement('h2', null, "\u6D63\u6EAA\u6C99"), _react2.default.createElement('p', null, "\u96F2\u5F71\u659C\u958B\u65ED\u65E5\u7D05\uFF0C\u5C0F\u95A3\u82B1\u9762\u6F38\u4EA4\u878D\u3002\u6C88\u9999\u5B9B\u8F49\u5FC3\u5B57\u91CD\u3002", _react2.default.createElement('br', null), "\u6B64\u5915\u98A8\u9732\u5DE7\u76F8\u9047\uFF0C\u4ED6\u5E74\u9E1E\u9CF3\u5171\u6476\u7A7A\u3002\u4EBA\u9593\u4F55\u8655\u4E0D\u5F9E\u5BB9\u3002")), _react2.default.createElement('hr', null), _react2.default.createElement('div', { className: 'poem' }, _react2.default.createElement('h2', null, "\u8D3A\u65B0\u90CE"), _react2.default.createElement('p', null, "\u68A6\u89C9\u98CE\u96F7\u5B9A\u3002\u770B\u534A\u8F6E\u3001\u5F90\u5F90\u7A33\u4E0A\uFF0C\u6162\u76C8\u8427\u5CAD\u3002\u6B32\u6434\u5E18\u680A\u6D41\u5149\u6E7F\uFF0C\u8FDC\u8FD1\u6A58\u706F\u63A9\u6620\u3002\u6E10\u534E\u5F69\u3001\u98D8\u6447\u5165\u5F71\u3002\u871C\u70DB\u5077\u6EF4\u5316\u559C\u6CEA\uFF0C\u770B\u53CC\u9E33\u3001\u7693\u7FCE\u521D\u76F8\u5E76\u3002\u524D\u5C18\u8A93\uFF0C\u822C\u822C\u5E94\u3002", _react2.default.createElement('br', null), "\u5343\u79CB\u6B64\u9645\u4FF1\u4E00\u9759\u3002\u601C\u7709\u5C71\u3001\u4F3C\u7B11\u8FD8\u98A6\uFF0C\u7EFF\u6CE2\u7EA2\u674F\u3002\u6267\u624B\u897F\u6E56\u6570\u5C42\u78A7\uFF0C\u8BEF\u4E86\u6885\u9080\u9E64\u8BF7\u3002\u6B63\u665A\u7167\u3001\u697C\u8239\u5C0F\u8247\u3002\u5317\u671B\u4E61\u56ED\u4F55\u65F6\u5230\uFF0C\u613F\u4E58\u69CE\u3001\u6362\u671D\u5915\u9189\u9192\u3002\u5F52\u671F\u81F3\uFF0C\u95FB\u9E21\u9E23\u3002")), _react2.default.createElement('hr', null)), _react2.default.createElement('div', { className: 'article-right' }))));
+          return _this4.Continue();
+        }, src: this.state.imgs[1] }), _react2.default.createElement('img', { className: 'img1', ref: 'movemain1', onMouseEnter: function onMouseEnter() {
+          return _this4.Pause();
+        }, onMouseLeave: function onMouseLeave() {
+          return _this4.Continue();
+        }, src: this.state.imgs[2] })), _react2.default.createElement('div', { className: 'slide-img-right' }, _react2.default.createElement('img', { ref: 'moveright', src: this.state.imgs[2] }), _react2.default.createElement('img', { ref: 'moveright1', src: this.state.imgs[3] })))), _react2.default.createElement('div', { className: 'article' }, _react2.default.createElement('div', { className: 'article-left' }), _react2.default.createElement('div', { className: 'article-center' }, _react2.default.createElement('div', { className: 'poem' }, _react2.default.createElement('h2', null, "\u6D63\u6EAA\u6C99"), _react2.default.createElement('p', null, "\u96F2\u5F71\u659C\u958B\u65ED\u65E5\u7D05\uFF0C\u5C0F\u95A3\u82B1\u9762\u6F38\u4EA4\u878D\u3002\u6C88\u9999\u5B9B\u8F49\u5FC3\u5B57\u91CD\u3002", _react2.default.createElement('br', null), "\u6B64\u5915\u98A8\u9732\u5DE7\u76F8\u9047\uFF0C\u4ED6\u5E74\u9E1E\u9CF3\u5171\u6476\u7A7A\u3002\u4EBA\u9593\u4F55\u8655\u4E0D\u5F9E\u5BB9\u3002")), _react2.default.createElement('hr', null), _react2.default.createElement('div', { className: 'poem' }, _react2.default.createElement('h2', null, "\u8D3A\u65B0\u90CE"), _react2.default.createElement('p', null, "\u68A6\u89C9\u98CE\u96F7\u5B9A\u3002\u770B\u534A\u8F6E\u3001\u5F90\u5F90\u7A33\u4E0A\uFF0C\u6162\u76C8\u8427\u5CAD\u3002\u6B32\u6434\u5E18\u680A\u6D41\u5149\u6E7F\uFF0C\u8FDC\u8FD1\u6A58\u706F\u63A9\u6620\u3002\u6E10\u534E\u5F69\u3001\u98D8\u6447\u5165\u5F71\u3002\u871C\u70DB\u5077\u6EF4\u5316\u559C\u6CEA\uFF0C\u770B\u53CC\u9E33\u3001\u7693\u7FCE\u521D\u76F8\u5E76\u3002\u524D\u5C18\u8A93\uFF0C\u822C\u822C\u5E94\u3002", _react2.default.createElement('br', null), "\u5343\u79CB\u6B64\u9645\u4FF1\u4E00\u9759\u3002\u601C\u7709\u5C71\u3001\u4F3C\u7B11\u8FD8\u98A6\uFF0C\u7EFF\u6CE2\u7EA2\u674F\u3002\u6267\u624B\u897F\u6E56\u6570\u5C42\u78A7\uFF0C\u8BEF\u4E86\u6885\u9080\u9E64\u8BF7\u3002\u6B63\u665A\u7167\u3001\u697C\u8239\u5C0F\u8247\u3002\u5317\u671B\u4E61\u56ED\u4F55\u65F6\u5230\uFF0C\u613F\u4E58\u69CE\u3001\u6362\u671D\u5915\u9189\u9192\u3002\u5F52\u671F\u81F3\uFF0C\u95FB\u9E21\u9E23\u3002")), _react2.default.createElement('hr', null)), _react2.default.createElement('div', { className: 'article-right' }))));
     }
   }]);
 

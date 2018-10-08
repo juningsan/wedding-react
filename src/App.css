@@ -44,8 +44,46 @@
   width:30%;
   height:100%;
   z-index: 10;
+  overflow:hidden;
 }
 
+.movemain {
+  position: relative;
+  float:left;
+  width:30%;
+  height:100%;
+  z-index: 10;
+  animation:movemain 1s;
+}
+
+.movemain1 {
+  position: relative;
+  float:left;
+  top:-100%;
+  left:30%;
+  width:30%;
+  height:100%;
+  z-index: 10;
+  animation:movemain1 1s;
+}
+
+.awaymain {
+  position: relative;
+  float:left;
+  width:30%;
+  height:100%;
+  z-index: 10;
+  left:-1000px;
+}
+
+.awaymain1 {
+  position: relative;
+  float:left;
+  top:-100%;
+  width:30%;
+  height:100%;
+  z-index: 10;
+}
 .slide-img-left {
   position: relative;
   float:left;
@@ -55,8 +93,58 @@
   margin-left:7%;
   margin-right:-3%;
   z-index: 1;
+  overflow:hidden;
 }
 
+.moveleft {
+  position: relative;
+  float:left;
+  width:30%;
+  height:90%;
+  margin-top:1%;
+  /* margin-left:7%; */
+  margin-right:-3%;
+  z-index: 1;
+  animation:moveleft 1s;
+}
+
+.moveleft1 {
+  position: relative;
+  float:left;
+  width:30%;
+  height:90%;
+  top:-100%;
+  left:30%;
+  margin-top:1%;
+  /* margin-left:7%; */
+  margin-right:-3%;
+  z-index: 1;
+  animation:moveleft1 1s;
+}
+
+.awayleft {
+  position: relative;
+  float:left;
+  width:30%;
+  height:90%;
+  margin-top:1%;
+  /* margin-left:7%; */
+  margin-right:-3%;
+  z-index: 1;
+  left:-1000px;
+}
+
+.awayleft1 {
+  position: relative;
+  float:left;
+  width:30%;
+  height:90%;
+  top:-100%;
+  margin-top:1%;
+  /* margin-left:7%; */
+  margin-right:-3%;
+  z-index: 1;
+}
 .slide-img-right {
   position: relative;
   float:right;
@@ -66,12 +154,76 @@
   margin-right:7%;
   margin-left:-3%;
   z-index: 1;
+  overflow:hidden;
+}
+
+.moveright {
+  position: relative;
+  float:right;
+  width:30%;
+  height:90%;
+  margin-top:1%;
+  margin-right:7%;
+  margin-left:-3%;
+  z-index: 1;
+  animation:moveright 1s;
+}
+
+.moveright1 {
+  position: relative;
+  float:right;
+  width:30%;
+  height:90%;
+  top:-100%;
+  margin-top:1%;
+  margin-right:7%;
+  margin-left:-3%;
+  z-index: 1;
+  animation:moveright1 1s;
+}
+
+.awayright {
+  position: relative;
+  float:right;
+  width:30%;
+  height:90%;
+  margin-top:1%;
+  margin-right:7%;
+  margin-left:-3%;
+  z-index: 1;
+  left:-1000px;
+}
+
+.awayright1 {
+  position: relative;
+  float:right;
+  width:30%;
+  height:90%;
+  top:-100%;
+  margin-top:1%;
+  margin-right:7%;
+  margin-left:-3%;
+  z-index: 1;
 }
 
 .slide img {
+  float:left;
   display:block;
   width:100%;
   height:100%;
+  
+  /* border-radius: 3%; */
+}
+
+.slide .img1 {
+  position:relative;
+  float:left;
+  display:block;
+  top:-100%;
+  left:100%;
+  width:100%;
+  height:100%;
+  
   /* border-radius: 3%; */
 }
 
@@ -109,8 +261,32 @@
   float:right;
 }
 
+@keyframes movemain {
+  0% {left:0px;}
+  100% {left:-100%;}
+}
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+@keyframes moveright {
+  0% {left:0px;}
+  100% {left:-100%;}
+}
+
+@keyframes moveleft {
+  0% {left:0px;}
+  100% {left:-100%;}
+}
+
+@keyframes movemain1 {
+  0% {left:100%;height:90%;}
+  100% {left:0px;height:100%}
+}
+
+@keyframes moveright1 {
+  0% {left:100%;}
+  100% {left:0px;}
+}
+
+@keyframes moveleft1 {
+  0% {left:100%;}
+  100% {left:0px;}
 }

@@ -30,11 +30,29 @@ class App extends Component {
     return arr1;
   }
   changeImg(){
-    let imgs1=[].concat(this.state.imgs);
+    
+    this.refs.movemain.className="movemain";
+    this.refs.moveright.className="moveright";
+    this.refs.moveleft.className="moveleft";
+    this.refs.movemain1.className="movemain1";
+    this.refs.moveright1.className="moveright1";
+    this.refs.moveleft1.className="moveleft1";
+    setTimeout(()=>{
+        this.refs.movemain.className="awaymain";
+        this.refs.moveright.className="awayright";
+        this.refs.moveleft.className="awayleft";
+        this.refs.movemain1.className="awaymain1";
+        this.refs.moveright1.className="awayright1";
+        this.refs.moveleft1.className="awayleft1";
+      },1000)
+    
+      let imgs1=[].concat(this.state.imgs);
     imgs1=this.changeSequence(imgs1);
     console.log('ok',imgs1)
     this.setState({
       imgs:imgs1,
+    },()=>{
+      
     })
     
   }
@@ -49,7 +67,25 @@ class App extends Component {
     this.t=setInterval(this.changeImg,3000);
   }
   componentDidMount(){
+    setTimeout(() => {
+      this.refs.movemain.className="movemain";
+    this.refs.moveright.className="moveright";
+    this.refs.moveleft.className="moveleft";
+    this.refs.movemain1.className="movemain1";
+    this.refs.moveright1.className="moveright1";
+    this.refs.moveleft1.className="moveleft1";
+    setTimeout(()=>{
+        this.refs.movemain.className="awaymain";
+        this.refs.moveright.className="awayright";
+        this.refs.moveleft.className="awayleft";
+        this.refs.movemain1.className="awaymain1";
+        this.refs.moveright1.className="awayright1";
+        this.refs.moveleft1.className="awayleft1";
+      },1000)
+    
     this.t=setInterval(this.changeImg,3000);
+    }, 3000);
+      
   }
   render() {
     return (
@@ -62,13 +98,16 @@ class App extends Component {
           <div className="slide">
               <div className="slide-bar">
               <div className="slide-img-left">
-              <img src={this.state.imgs[0]} />
+                <img ref="moveleft" src={this.state.imgs[0]} />
+                <img  ref='moveleft1' src={this.state.imgs[1]} />
               </div>
               <div className="slide-img-main">
-                <img onMouseEnter={()=>this.Pause()} onMouseLeave={()=>this.Continue()} src={this.state.imgs[1]} />
+                <img ref='movemain' onMouseEnter={()=>this.Pause()} onMouseLeave={()=>this.Continue()} src={this.state.imgs[1]} />
+                <img className="img1" ref='movemain1' onMouseEnter={()=>this.Pause()} onMouseLeave={()=>this.Continue()} src={this.state.imgs[2]} />
               </div>
               <div className="slide-img-right">
-              <img src={this.state.imgs[2]} />
+                <img ref="moveright" src={this.state.imgs[2]} />
+                <img ref="moveright1" src={this.state.imgs[3]} />
               </div>
             </div>
           </div>
