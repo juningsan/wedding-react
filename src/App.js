@@ -14,9 +14,16 @@ class App extends Component {
     let imgs=[];
     this.state={
       imgs:[img1,img2,img3,img4,img5],
+      time:{
+        day:0,
+        hour:0,
+        minute:0,
+        second:0
+      }
     };
     this.changeImg=this.changeImg.bind(this);
     this.Pause=this.Pause.bind(this);
+    this.CoupledTime=this.CoupledTime.bind(this);
   }
 
 
@@ -48,7 +55,6 @@ class App extends Component {
     
       let imgs1=[].concat(this.state.imgs);
     imgs1=this.changeSequence(imgs1);
-    console.log('ok',imgs1)
     this.setState({
       imgs:imgs1,
     },()=>{
@@ -66,6 +72,27 @@ class App extends Component {
     console.log('continued');
     this.t=setInterval(this.changeImg,3000);
   }
+
+  CoupledTime(){
+    let weddingDate=Date.parse("Jun 23, 2018");
+    weddingDate+=11*3600000;
+    let today=new Date();
+    today=today.getTime();
+    let passed=today-weddingDate;
+    let day=parseInt(passed/(3600000*24));
+    let hour=parseInt(passed/3600000-day*24);
+    let minute=parseInt(passed/60000-day*24*60-hour*60);
+    let second=parseInt(passed/1000-day*24*3600-hour*3600-minute*60);
+    this.setState({
+      time:{
+        day:day,
+        hour:hour,
+        minute:minute,
+        second:second
+      }
+    });
+  }
+
   componentDidMount(){
     setTimeout(() => {
       this.refs.movemain.className="movemain";
@@ -85,9 +112,10 @@ class App extends Component {
     
     this.t=setInterval(this.changeImg,3000);
     }, 3000);
-      
+    setInterval(this.CoupledTime,1000);  
   }
   render() {
+    
     return (
       <div className="App">
         <header className="App-header">
@@ -113,6 +141,17 @@ class App extends Component {
           </div>
           <div className="article">
             <div className="article-left">
+              <div className="couple-time">
+                <p>我们已经成婚：</p>
+                <p>{this.state.time.day}</p>
+                <p>天</p>
+                <p>{this.state.time.hour}</p>
+                <p>小时</p>
+                <p>{this.state.time.minute}</p>
+                <p>分钟</p>
+                <p>{this.state.time.second}</p>
+                <p>秒</p>
+              </div>
             </div>
             <div className="article-center">
               <div className="poem">
