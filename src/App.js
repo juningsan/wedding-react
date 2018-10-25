@@ -7,18 +7,29 @@ import img2 from './img/2.png';
 import img3 from './img/3.png';
 import img4 from './img/4.png';
 import img5 from './img/5.png';
+import tree_img from './img/tree.jpg';
+import Weather from './Weather/Weather.js';
 
 class App extends Component {
   constructor(props){
     super(props);
     let imgs=[];
+    let weddingDate=Date.parse("Jun 23, 2018");
+    weddingDate+=11*3600000;
+    let today=new Date();
+    today=today.getTime();
+    let passed=today-weddingDate;
+    let day=parseInt(passed/(3600000*24));
+    let hour=parseInt(passed/3600000-day*24);
+    let minute=parseInt(passed/60000-day*24*60-hour*60);
+    let second=parseInt(passed/1000-day*24*3600-hour*3600-minute*60);
     this.state={
       imgs:[img1,img2,img3,img4,img5],
       time:{
-        day:0,
-        hour:0,
-        minute:0,
-        second:0
+        day:day,
+        hour:hour,
+        minute:minute,
+        second:second
       }
     };
     this.changeImg=this.changeImg.bind(this);
@@ -142,32 +153,40 @@ class App extends Component {
           <div className="article">
             <div className="article-left">
               <div className="couple-time">
-                <p>我们已经成婚：</p>
-                <p>{this.state.time.day}</p>
-                <p>天</p>
-                <p>{this.state.time.hour}</p>
-                <p>小时</p>
-                <p>{this.state.time.minute}</p>
-                <p>分钟</p>
-                <p>{this.state.time.second}</p>
-                <p>秒</p>
+                <h2 className="couple-time-title">我们已经成婚：</h2>
+                <div className="couple-time-box">
+                  <p className="couple-time-number">{this.state.time.day}</p>
+                  <p className="couple-time-text">天</p>
+                  <p className="couple-time-number">{this.state.time.hour}</p>
+                  <p className="couple-time-text">小时</p>
+                  <p className="couple-time-number">{this.state.time.minute}</p>
+                  <p className="couple-time-text">分钟</p>
+                  <p className="couple-time-number">{this.state.time.second}</p>
+                  <p className="couple-time-text">秒</p>
+                </div>
               </div>
+              {/* <div className="couple-tree">
+                <img className="tree-img" src={tree_img} />
+              </div> */}
             </div>
             <div className="article-center">
-              <div className="poem">
-                <h2>浣溪沙</h2>
-                <p>雲影斜開旭日紅，小閣花面漸交融。沈香宛轉心字重。<br/>
-                此夕風露巧相遇，他年鸞鳳共摶空。人間何處不從容。</p>
+              <div className="poems">
+                <div className="poem">
+                  <h2>浣溪沙</h2>
+                  <p>雲影斜開旭日紅，小閣花面漸交融。沈香宛轉心字重。<br/>
+                  此夕風露巧相遇，他年鸞鳳共摶空。人間何處不從容。</p>
+                </div>
+                <hr/>
+                <div className="poem">
+                  <h2>贺新郎</h2>
+                  <p>梦觉风雷定。看半轮、徐徐稳上，慢盈萧岭。欲搴帘栊流光湿，远近橘灯掩映。渐华彩、飘摇入影。蜜烛偷滴化喜泪，看双鸳、皓翎初相并。前尘誓，般般应。<br/>
+                  千秋此际俱一静。怜眉山、似笑还颦，绿波红杏。执手西湖数层碧，误了梅邀鹤请。正晚照、楼船小艇。北望乡园何时到，愿乘槎、换朝夕醉醒。归期至，闻鸡鸣。</p>
+                </div>
+                <hr/>
               </div>
-              <hr/>
-              <div className="poem">
-                <h2>贺新郎</h2>
-                <p>梦觉风雷定。看半轮、徐徐稳上，慢盈萧岭。欲搴帘栊流光湿，远近橘灯掩映。渐华彩、飘摇入影。蜜烛偷滴化喜泪，看双鸳、皓翎初相并。前尘誓，般般应。<br/>
-                千秋此际俱一静。怜眉山、似笑还颦，绿波红杏。执手西湖数层碧，误了梅邀鹤请。正晚照、楼船小艇。北望乡园何时到，愿乘槎、换朝夕醉醒。归期至，闻鸡鸣。</p>
-              </div>
-              <hr/>
             </div>
             <div className="article-right">
+              <Weather></Weather>
             </div>
           </div>
         </div>

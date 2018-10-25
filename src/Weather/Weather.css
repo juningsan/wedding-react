@@ -1,0 +1,12 @@
+h2 {
+    font-family: "仿宋";
+}
+.weather-box {
+    width: 80%;
+    margin:8% auto;
+    text-align:left;
+}
+.weather-box legend {
+    color:darkcyan;
+    font-family: "黑体";
+}
