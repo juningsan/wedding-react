@@ -8,8 +8,14 @@ class Weather extends Component{
         super(props);
         this.state={
             tabIndex:0,
-            data:null,
-            data1:null
+            data:{
+                weather:null,
+                air:null
+            },
+            data1:{
+                weather:null,
+                air:null
+            }
         };
         this.getWeather=this.getWeather.bind(this);
     }
@@ -39,22 +45,49 @@ class Weather extends Component{
         let requestConfig={
           method: "GET",
         }
-        fetch('http://t.weather.sojson.com/api/weather/city/101210101',requestConfig).then(res=>res.json()).then(res=>{
+        // fetch('http://t.weather.sojson.com/api/weather/city/101210101',requestConfig).then(res=>res.json()).then(res=>{
+        //     this.setState({
+        //         data:res.data
+        //     },()=>{console.log(this.state.data.wendu)});
+        // });
+        // fetch('http://t.weather.sojson.com/api/weather/city/101160101',requestConfig).then(res=>res.json()).then(res=>{
+        //     this.setState({
+        //         data1:res.data
+        //     },()=>{console.log(this.state.data1.wendu)});
+        // });
+        fetch('https://free-api.heweather.com/s6/weather/now?location=CN101210101&&key=3a3d9439e95a4472b1aaf7106b0e1aad',requestConfig).then(res=>res.json()).then(res=>{
+            // this.setState({
+            //     data:{
+            //         weather:res.HeWeather6[0].now
+            //     }
+            // },()=>{console.log(this.state.data)});
+            let weather=res.HeWeather6[0].now;
+            fetch('https://free-api.heweather.com/s6/air/now?location=CN101210101&&key=3a3d9439e95a4472b1aaf7106b0e1aad',requestConfig).then(res=>res.json()).then(res=>{
             this.setState({
-                data:res.data
-            },()=>{console.log(this.state.data.wendu)});
+                data:{
+                    weather:weather,
+                    air:res.HeWeather6[0].air_now_city
+                }
+            },()=>{console.log(this.state.data)});
+            });
         });
-        fetch('http://t.weather.sojson.com/api/weather/city/101160101',requestConfig).then(res=>res.json()).then(res=>{
+        fetch('https://free-api.heweather.com/s6/weather/now?location=CN101160101&&key=3a3d9439e95a4472b1aaf7106b0e1aad',requestConfig).then(res=>res.json()).then(res=>{
+            let weather=res.HeWeather6[0].now;
+            fetch('https://free-api.heweather.com/s6/air/now?location=CN101210101&&key=3a3d9439e95a4472b1aaf7106b0e1aad',requestConfig).then(res=>res.json()).then(res=>{
             this.setState({
-                data1:res.data
-            },()=>{console.log(this.state.data1.wendu)});
+                data1:{
+                    weather:weather,
+                    air:res.HeWeather6[0].air_now_city
+                }
+            },()=>{console.log(this.state.data1)})
+            });
         });
     }
     componentWillMount(){
         this.getWeather();
     }
     render() {
-        if(this.state.data&&this.state.data1)
+        if(this.state.data&&this.state.data.weather&&this.state.data.air&&this.state.data1&&this.state.data1.weather&&this.state.data1.air)
             return (           
                 <div>
                     <h2>风里雨里，我们一起</h2>
@@ -62,44 +95,52 @@ class Weather extends Component{
                         <fieldset>
                             <legend>杭州</legend>
                             <p>
+                                <span>天气：</span>
+                                {this.state.data.weather.cond_txt}
+                            </p>
+                            <p>
                                 <span>温度：</span>
-                                {this.state.data.wendu}
+                                {this.state.data.weather.tmp}
                                 <span>度</span>
                             </p>
                             <p>
-                                <span>湿度：</span>
-                                {this.state.data.shidu}
+                                <span>相对湿度：</span>
+                                {this.state.data.weather.hum}
                             </p>
                             <p>
                                 <span>空气质量：</span>
-                                {this.state.data.quality}
+                                {this.state.data.air.qlty}
                             </p>
-                            <p>
+                            {/* <p>
                                 <span>建议：</span>
                                 {this.state.data.ganmao}
-                            </p>
+                            </p> */}
                         </fieldset>
                     </form>
                     <form className='weather-box'>
                         <fieldset>
                             <legend>兰州</legend>
                             <p>
+                                <span>天气：</span>
+                                {this.state.data1.weather.cond_txt}
+                            </p>
+                            <p>
                                 <span>温度：</span>
-                                {this.state.data1.wendu}
+                                {this.state.data1.weather.tmp}
                                 <span>度</span>
                             </p>
                             <p>
-                                <span>湿度：</span>
-                                {this.state.data1.shidu}
+                                <span>相对湿度：</span>
+                                {this.state.data1.weather.hum}
                             </p>
                             <p>
                                 <span>空气质量：</span>
-                                {this.state.data1.quality}
+                                {this.state.data1.air.qlty}
                             </p>
-                            <p>
+                            {/* <p>
                                 <span>建议：</span>
                                 {this.state.data1.ganmao}
-                            </p>
+                            </p> */}
                         </fieldset>                
                     </form>
                 </div>

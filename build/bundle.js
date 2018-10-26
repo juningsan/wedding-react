@@ -61,7 +61,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "63e6f7a300588053c2c1"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "4556a6934e6612290e94"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -23420,8 +23420,14 @@ var Weather = function (_Component) {
 
         _this.state = {
             tabIndex: 0,
-            data: null,
-            data1: null
+            data: {
+                weather: null,
+                air: null
+            },
+            data1: {
+                weather: null,
+                air: null
+            }
         };
         _this.getWeather = _this.getWeather.bind(_this);
         return _this;
@@ -23456,23 +23462,53 @@ var Weather = function (_Component) {
 
             var requestConfig = {
                 method: "GET"
-            };
-            fetch('http://t.weather.sojson.com/api/weather/city/101210101', requestConfig).then(function (res) {
+                // fetch('http://t.weather.sojson.com/api/weather/city/101210101',requestConfig).then(res=>res.json()).then(res=>{
+                //     this.setState({
+                //         data:res.data
+                //     },()=>{console.log(this.state.data.wendu)});
+                // });
+                // fetch('http://t.weather.sojson.com/api/weather/city/101160101',requestConfig).then(res=>res.json()).then(res=>{
+                //     this.setState({
+                //         data1:res.data
+                //     },()=>{console.log(this.state.data1.wendu)});
+                // });
+            };fetch('https://free-api.heweather.com/s6/weather/now?location=CN101210101&&key=3a3d9439e95a4472b1aaf7106b0e1aad', requestConfig).then(function (res) {
                 return res.json();
             }).then(function (res) {
-                _this2.setState({
-                    data: res.data
-                }, function () {
-                    console.log(_this2.state.data.wendu);
+                // this.setState({
+                //     data:{
+                //         weather:res.HeWeather6[0].now
+                //     }
+                // },()=>{console.log(this.state.data)});
+                var weather = res.HeWeather6[0].now;
+                fetch('https://free-api.heweather.com/s6/air/now?location=CN101210101&&key=3a3d9439e95a4472b1aaf7106b0e1aad', requestConfig).then(function (res) {
+                    return res.json();
+                }).then(function (res) {
+                    _this2.setState({
+                        data: {
+                            weather: weather,
+                            air: res.HeWeather6[0].air_now_city
+                        }
+                    }, function () {
+                        console.log(_this2.state.data);
+                    });
                 });
             });
-            fetch('http://t.weather.sojson.com/api/weather/city/101160101', requestConfig).then(function (res) {
+            fetch('https://free-api.heweather.com/s6/weather/now?location=CN101160101&&key=3a3d9439e95a4472b1aaf7106b0e1aad', requestConfig).then(function (res) {
                 return res.json();
             }).then(function (res) {
-                _this2.setState({
-                    data1: res.data
-                }, function () {
-                    console.log(_this2.state.data1.wendu);
+                var weather = res.HeWeather6[0].now;
+                fetch('https://free-api.heweather.com/s6/air/now?location=CN101210101&&key=3a3d9439e95a4472b1aaf7106b0e1aad', requestConfig).then(function (res) {
+                    return res.json();
+                }).then(function (res) {
+                    _this2.setState({
+                        data1: {
+                            weather: weather,
+                            air: res.HeWeather6[0].air_now_city
+                        }
+                    }, function () {
+                        console.log(_this2.state.data1);
+                    });
                 });
             });
         }
@@ -23484,7 +23520,7 @@ var Weather = function (_Component) {
     }, {
         key: 'render',
         value: function render() {
-            if (this.state.data && this.state.data1) return _react2.default.createElement('div', null, _react2.default.createElement('h2', null, "\u98CE\u91CC\u96E8\u91CC\uFF0C\u6211\u4EEC\u4E00\u8D77"), _react2.default.createElement('form', { className: 'weather-box' }, _react2.default.createElement('fieldset', null, _react2.default.createElement('legend', null, "\u676D\u5DDE"), _react2.default.createElement('p', null, _react2.default.createElement('span', null, "\u6E29\u5EA6\uFF1A"), this.state.data.wendu, _react2.default.createElement('span', null, "\u5EA6")), _react2.default.createElement('p', null, _react2.default.createElement('span', null, "\u6E7F\u5EA6\uFF1A"), this.state.data.shidu), _react2.default.createElement('p', null, _react2.default.createElement('span', null, "\u7A7A\u6C14\u8D28\u91CF\uFF1A"), this.state.data.quality), _react2.default.createElement('p', null, _react2.default.createElement('span', null, "\u5EFA\u8BAE\uFF1A"), this.state.data.ganmao))), _react2.default.createElement('form', { className: 'weather-box' }, _react2.default.createElement('fieldset', null, _react2.default.createElement('legend', null, "\u5170\u5DDE"), _react2.default.createElement('p', null, _react2.default.createElement('span', null, "\u6E29\u5EA6\uFF1A"), this.state.data1.wendu, _react2.default.createElement('span', null, "\u5EA6")), _react2.default.createElement('p', null, _react2.default.createElement('span', null, "\u6E7F\u5EA6\uFF1A"), this.state.data1.shidu), _react2.default.createElement('p', null, _react2.default.createElement('span', null, "\u7A7A\u6C14\u8D28\u91CF\uFF1A"), this.state.data1.quality), _react2.default.createElement('p', null, _react2.default.createElement('span', null, "\u5EFA\u8BAE\uFF1A"), this.state.data1.ganmao))));else return _react2.default.createElement('p', null, "\u52A0\u8F7D\u4E2D...");
+            if (this.state.data && this.state.data.weather && this.state.data.air && this.state.data1 && this.state.data1.weather && this.state.data1.air) return _react2.default.createElement('div', null, _react2.default.createElement('h2', null, "\u98CE\u91CC\u96E8\u91CC\uFF0C\u6211\u4EEC\u4E00\u8D77"), _react2.default.createElement('form', { className: 'weather-box' }, _react2.default.createElement('fieldset', null, _react2.default.createElement('legend', null, "\u676D\u5DDE"), _react2.default.createElement('p', null, _react2.default.createElement('span', null, "\u5929\u6C14\uFF1A"), this.state.data.weather.cond_txt), _react2.default.createElement('p', null, _react2.default.createElement('span', null, "\u6E29\u5EA6\uFF1A"), this.state.data.weather.tmp, _react2.default.createElement('span', null, "\u5EA6")), _react2.default.createElement('p', null, _react2.default.createElement('span', null, "\u76F8\u5BF9\u6E7F\u5EA6\uFF1A"), this.state.data.weather.hum), _react2.default.createElement('p', null, _react2.default.createElement('span', null, "\u7A7A\u6C14\u8D28\u91CF\uFF1A"), this.state.data.air.qlty))), _react2.default.createElement('form', { className: 'weather-box' }, _react2.default.createElement('fieldset', null, _react2.default.createElement('legend', null, "\u5170\u5DDE"), _react2.default.createElement('p', null, _react2.default.createElement('span', null, "\u5929\u6C14\uFF1A"), this.state.data1.weather.cond_txt), _react2.default.createElement('p', null, _react2.default.createElement('span', null, "\u6E29\u5EA6\uFF1A"), this.state.data1.weather.tmp, _react2.default.createElement('span', null, "\u5EA6")), _react2.default.createElement('p', null, _react2.default.createElement('span', null, "\u76F8\u5BF9\u6E7F\u5EA6\uFF1A"), this.state.data1.weather.hum), _react2.default.createElement('p', null, _react2.default.createElement('span', null, "\u7A7A\u6C14\u8D28\u91CF\uFF1A"), this.state.data1.air.qlty))));else return _react2.default.createElement('p', null, "\u52A0\u8F7D\u4E2D...");
         }
     }]);
 
