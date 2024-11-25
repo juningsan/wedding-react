@@ -121,9 +121,9 @@ class App extends Component {
         this.refs.moveleft1.className="awayleft1";
       },1000)
     
-    this.t=setInterval(this.changeImg,3000);
+    this.t=setInterval(()=>{this.changeImg,3000});
     }, 3000);
-    setInterval(this.CoupledTime,1000);  
+    setInterval(()=>{this.CoupledTime,1000});  
   }
   render() {
     
