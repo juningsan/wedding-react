@@ -76,12 +76,12 @@ class App extends Component {
 
   Pause(){
     console.log('paused')
-    clearInterval(this.t);
+    clearInterval(()=>{this.t});
   }
 
   Continue(){
     console.log('continued');
-    this.t=setInterval(this.changeImg,3000);
+    this.t=setInterval(()=>{this.changeImg,3000});
   }
 
   CoupledTime(){
